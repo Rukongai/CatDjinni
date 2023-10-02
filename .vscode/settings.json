@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.txt": "divinity-story-goal",
+        "stdio.h": "c",
+        "string.h": "c",
+        "stdint.h": "c"
+    }
+}

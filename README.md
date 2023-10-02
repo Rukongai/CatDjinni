@@ -1,15 +1,41 @@
-# STM32F4 readout protection exploit
+# CatDjinni - CatGenie AI exploit research
 
-This repository contains an adaptation of the Flash Patch Breakpoint expoit originally described by Johannes Obermaier in https://www.usenix.org/system/files/woot20-paper-obermaier.pdf for STM32F1 family of embedded controllers.
+This is still IN PROGRESS - and has not been made working yet. Do not go into this expecting results.
 
-I've verified that this exploit works. I've managed to dump an RDP level 1 protected STM32F415 controller.
+This repository is used to hold my current work and research around dumping the firmware from the CatGenie AI for the eventual purpose of modifying it to allow re-use of cartridges and routine modifications, better smarthome integration, and any other features that might arise.
 
-## Things worth mentioning:
-* The default baud rate of this rootshell is 256kb.
-* The SRAM of F4 seems more sensitive to power loss. Data gets corrupted at room temprerature quickly so you'll have to freeze the chip right before glitching. An upside down dust blower pointed at the target chip works great for this.
-* Do not bother sampling the NRST pin for power loss, just kill the power to the chip momentarily. I used an ESP8266 as an attack board and consecutive `digitalWrite(0); digitalWrite(1);` of the target chip power pins with no delay between them was consistently enough to reset it.
-* Freezing the chip makes its internal oscillator deviate enoug to mangle the root shell UART output. Wait till the target chip warms back up to the room temperature. Keep typing "h" and hitting "Enter" in the terminal till you start seeing legible response from the root shell.
+The goal eventually is to create chip that will connect to the CatGenie AI board using the SWD header via a TC-2030 connector to allow reflashing the cat genie with a modified firmware.
 
-The code is heavily based on the proof-of-concept sample published by Johannes Obermaier at https://github.com/JohannesObermaier/f103-analysis/tree/master/h3/rootshell
+This project borrows heavily from the following
 
-Happy hacking.
+* lolwheel: stm32f4-rdp-workaround https://github.com/lolwheel/stm32f4-rdp-workaround
+* lolwheel: GPB_attack_board_8266 https://github.com/lolwheel/FPB_attack_board_8266
+* Johannes Obermaier: Original researcher who detailed the FPB exploit https://github.com/JohannesObermaier/f103-analysis/tree/master/h3/rootshell
+
+## attack
+
+This folder contains the code for creating the firmware to be used on the attack board - in this case - an Espressif ESP32-Wroom-D32 from HiLetgo(I had a few on hand from another project)
+
+I will update in a bit to show the pin mappings
+
+## target
+
+This folder contains the code for creating the firmware to be flashed to the SRAM of the target chip (STM32L4) prior to glitching it. 
+
+## Current issues being worked through
+
+### Reset Vector Entry Point
+The original exploit uses a manually defined reset vector entry pointed defined in ram.ld of 0x108. This was required on the STM32F1 series, but i'm not certain if it's still relevant on the STM32L4. Still trying to understand the involved mechanisms
+
+(Add hyperlinks)
+rm0394 - STM32L4 - 2.6
+rm0008 - STMF103 - 3.4
+
+Once I figure this out - I should be able to continue
+
+## Contributing
+
+If anyone wants to assist I could use assistance on the following fronts
+
+* Figuring out this exploit - STM32 REs please open an issue if you'd like to collaborate
+* Developer to help make meaningful changes to the firmware once dumped and decompiled
