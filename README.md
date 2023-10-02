@@ -18,7 +18,7 @@ This folder contains the code for creating the firmware to be flashed to the SRA
 
 ## attack
 
-This folder contains the code for creating the firmware to be used on the attack board - in this case - an Espressif ESP32-Wroom-D32 from HiLetgo(I had a few on hand from another project)
+This folder contains the code for creating the firmware to be used on the attack board - in this case - an Espressif [ESP32-Wroom-D32 from HiLetgo](https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z)
 
 Esp32 to Cat Genie wiring
 
@@ -32,9 +32,9 @@ Esp32 to Cat Genie wiring
 | 5 - BOOT0| JP12 Pin 2 |
 
 Because JP7 is being used for SWD and connected with the TC-2030 - I wire
-* Esp32 reset to breadboard
-* ST-Link reset to breadboard
-* breadboard to TC-2030 pin 3
+* Esp32 reset -> breadboard
+* ST-Link reset -> breadboard
+* breadboard -> TC-2030 pin 3
 
 This way I can remove the debug connector connections without having to disconnect the TC-2030 or lose the NRST sampling from the esp32
 
@@ -48,7 +48,9 @@ The original exploit uses a manually defined reset vector entry pointed defined 
 I don't know if I ported the 8266 attack board code to be used with the ESP32 properly
 
 [rm0394](research/Documents/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STM32L4 - 2.6
+
 [rm0090](research/Documents/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STM32F4 - 2.4
+
 [rm0008](research/Documents/rm0008-stm32f101xx-stm32f102xx-stm32f103xx-stm32f105xx-and-stm32f107xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STMF103 - 3.4
 
 ## High level process overview
