@@ -81,5 +81,5 @@ load_image shellcode.bin 0x20000000
 
 If anyone wants to assist I could use assistance on the following fronts
 
-* Figuring out this exploit - STM32 REs please open an issue if you'd like to collaborate
+* Figuring out this exploit - STM32 REs please open an issue if you'd like to collaborate. If someone wants to look over my ESP32 code and compare it to the [original 8266](https://github.com/lolwheel/FPB_attack_board_8266/blob/master/src/main.cpp) and make sure I didn't miss or mess anything up, that would be appreciated!
 * Developer to help make meaningful changes to the firmware once dumped and decompiled
