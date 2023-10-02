@@ -41,17 +41,15 @@ This way I can remove the debug connector connections without having to disconne
 ## Current issues being worked through
 
 ### Reset Vector Entry Point
-I'm currently still trying to get a working shell running from glitched SRAM.
+* I'm currently still trying to get a working shell running from glitched SRAM.
+* The original exploit uses a manually defined reset vector entry pointed defined in ram.ld of 0x108. This was required on the STM32F1 series, but i'm not certain if it's still relevant on the STM32L4. Still trying to understand the involved mechanisms
+* I don't know if I ported the 8266 attack board code to be used with the ESP32 properly
 
-The original exploit uses a manually defined reset vector entry pointed defined in ram.ld of 0x108. This was required on the STM32F1 series, but i'm not certain if it's still relevant on the STM32L4. Still trying to understand the involved mechanisms
+* [rm0394](research/Documents/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STM32L4 - 2.6
 
-I don't know if I ported the 8266 attack board code to be used with the ESP32 properly
+* [rm0090](research/Documents/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STM32F4 - 2.4
 
-[rm0394](research/Documents/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STM32L4 - 2.6
-
-[rm0090](research/Documents/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STM32F4 - 2.4
-
-[rm0008](research/Documents/rm0008-stm32f101xx-stm32f102xx-stm32f103xx-stm32f105xx-and-stm32f107xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STMF103 - 3.4
+* [rm0008](research/Documents/rm0008-stm32f101xx-stm32f102xx-stm32f103xx-stm32f105xx-and-stm32f107xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) - STMF103 - 3.4
 
 ## High level process overview
 
