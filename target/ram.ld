@@ -4,8 +4,7 @@ ENTRY(_start)
 MEMORY
 {
   RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 160K
-  RAM2 (xrw)      : ORIGIN = 0x10000000, LENGTH = 32K
-  FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 512K
+  FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 512K
 }
 
 SECTIONS
@@ -16,7 +15,6 @@ SECTIONS
     . = ALIGN(4);
     KEEP(*(.isr_vector)) /* Startup code */
     . = ALIGN(4);
-    . = 0x108;
     *(.entryVec) /* entry vector position for SRAM execution */
   } >RAM
 
