@@ -17,6 +17,33 @@
 - [Research Notes](/research/)
 - [Target Board Notes](/target/)
 
+## 2026-Update
+Decided to revisit this over the last 48 hours.
+Firmware is still not dumped unencrypted.
+
+### Issues - Firmware:
+* The firmware saved to the flash chip is encrypted and decrypted by the MCU on boot, to load into SRAM. 
+* Cannot access SRAM without glitching RDP bit without wiping everything which bricks the device
+* Cannot intercept SPI traffic between nic/mcu or flash/mcu as everything is encrypted until MCU does its thing.
+* Same issue with pcap/mqtt mitm
+* The app does not download the firmware and disburse it to the CatGenie. It can trigger an update, but the firmware update mechanism is all on device
+
+### Issues - MCU
+* RDP1 is enabled :(
+* Current glitch bypasses don't work for the STM32Lx chips, need to use Flash Erase Suppression technique [described here](https://blog.syss.com/posts/voltage-glitching-the-stm32l05-microcontroller/)
+* I need to order some hardware to make this work. I want to use the PicoGlitcher, but getting an assembled one shipped for Germany to US is expensive. I'll probably order the PCBs from jlcpcb and populate it myself, but I don't know when I'll have the bandwidth to do that.
+* I also don't have a logic analayzer or oscilloscope. The timing on this glitch is tight and I want to make sure I get it right so I don't brick (a second) cat genie.
+
+So basically when I have more time and mental bandwidth and money i'll be back to try and finish this up.
+
+### Flash Erase Suppression:
+1. Trigger RDP downgrade (RDP1 → RDP0)
+2. Normally this erases flash
+3. Glitch at precise moment during erase setup
+4. RDP drops to 0, flash stays intact
+5. Read everything via debug
+
+
 ## About
 This is still IN PROGRESS - and has not been made working yet. If you try and use this repo - you'll likely brick your Cat Genie AI.
 

@@ -1,10 +1,10 @@
 # This folder contains my notes and findings on the CatGenie AI
 
-Board images and xrays taken from Rober Delien from the following Google Group
+Board images and xrays taken from Rober Delien from the following Google Group and myself
 https://groups.google.com/g/catgenius/c/3AZXsqBmoig
 
 ![AC Board Front](images/CatGenie%20AC%20board%20rev2%20-%20front.jpeg) ![AC Board Xray](images/CatGenie%20AC%20board%20rev2.png)
-![Mainboard Front](images/CatGenie%20DC%20board%20v2.5%20rev8.3.767R%20-%20front.jpeg) ![Mainboard Xray](images/CatGenie%20DC%20board%20v2.5%20rev8.3.767R%20(wide%20dnr).png)
+![Mainboard Front](images/CatGenie%20DC%20board%20v2.5%20rev8.3.767R%20-%20front.jpeg) ![Mainboard Xray](images/CatGenie%20DC%20board%20v2.5%20rev8.3.767R%20(wide%20dnr).png) ![Mainboard Back](images/IMG_2215.jpg)
 ![Touch Panel Back](images/CatGenie%20control%20panel%20v2%20rev734%20-%20back.jpeg) ![Touch Panel Xray](images/CatGenie%20control%20panel%20v2%20rev734.png)
 
 ## Hardware
