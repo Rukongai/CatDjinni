@@ -45,18 +45,17 @@ CR95HF
 | 7    | UART_TXD |           |
 | 8    | GND      | GND       |
 
-| JP10 | JP7       | STM32     |
-|------|-----------|-----------|
-| 1    | 1         | VCC       |
-| 2    | 6 (SWO)   | PB3       |
-| 3    |           | PB13      |
-| 4    |           | PC0       |
-| 5    |           | PC1       |
-| 6    | USART1_TXD| PA9       |
-| 7    | USART1_RXD| PA10      |
-| 8    | 5         | GND       |
+| JP10 | STM32     | Note |
+|------|-----------|------|
+| 1    | VCC       |      |
+| 2    | PA10      | USART1_RX |
+| 3    | PA9       | USART1_TX |
+| 4    | PC0       | |
+| 5    | PC1       | |
+| 6    | PB13      | |
+| 7    | PB3       | |
+| 8    | GND       | |
 
-USART1 seems to be disabled? Will be still using this header for developing the initial exploit, enabling it via the custom SRAM firmware
 
 | JP7 | STM32 | SWD     |
 |-----|-------|---------|
